@@ -1,67 +1,18 @@
 import 'package:flutter/material.dart';
+import 'package:places/ui/screen/sight_list_screen.dart';
 
 void main() {
-  runApp(const App());
+  runApp(const Main());
 }
 
-class App extends StatelessWidget {
-  const App({Key? key}) : super(key: key);
+class Main extends StatelessWidget {
+  const Main({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return const MaterialApp(
       title: 'Flutter Demo',
-      home: MyFirstWidget(),
+      home: SightListScreen(),
     );
-  }
-}
-
-class MyFirstWidget extends StatelessWidget {
-  const MyFirstWidget({Key? key}) : super(key: key);
-
-  static int buildCnt = 0;
-
-  @override
-  Widget build(BuildContext context) {
-    print(++buildCnt);
-
-    return Container(
-      child: Center(
-        child: Text('Hello!'),
-      ),
-    );
-  }
-
-  // ⚠️ Так не получится написать, т.к. context не является свойством объекта StatelessWidget
-  // Type contextRuntimeType() {
-  //   return context.runtimeType;
-  // }
-}
-
-class MySecondWidget extends StatefulWidget {
-  const MySecondWidget({Key? key}) : super(key: key);
-
-  @override
-  State<MySecondWidget> createState() => _MySecondWidgetState();
-}
-
-class _MySecondWidgetState extends State<MySecondWidget> {
-  static int buildCnt = 0;
-
-  @override
-  Widget build(BuildContext context) {
-    print(++buildCnt);
-
-    return Container(
-      child: Center(
-        child: Text('Hello!'),
-      ),
-    );
-  }
-
-  // ✅ Получилось использовать context.
-  // Он является свойством объекта _MySecondWidgetState
-  Type contextRuntimeType() {
-    return context.runtimeType;
   }
 }
