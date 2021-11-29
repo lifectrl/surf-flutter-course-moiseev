@@ -11,9 +11,23 @@ class _SightListScreenState extends State<SightListScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Center(
-        child: Text('Hello!'),
+      appBar: AppBar(
+        toolbarHeight: 100,
+        backgroundColor: Colors.transparent,
+        elevation: 0,
+        centerTitle: false,
+        title: const Text(
+          'Список\nинтересных мест',
+          style: TextStyle(
+            color: Color(0xff252849),
+            fontFamily: 'Roboto',
+            fontSize: 32,
+            fontWeight: FontWeight.w700,
+          ),
+        ),
       ),
+      body: Container(),
+      backgroundColor: Colors.white,
     );
   }
 }
